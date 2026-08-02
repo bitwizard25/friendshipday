@@ -40,10 +40,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen spidey-web-bg flex flex-col justify-center items-center p-4 relative overflow-hidden">
-      {/* Background Decorative Animated Elements */}
-      <div className="absolute top-10 left-10 w-72 h-72 bg-red-600/20 rounded-full blur-3xl animate-pulse-glow" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-pulse-glow" />
-
       {/* Main Card */}
       <div className="w-full max-w-lg glass-card rounded-3xl p-8 md:p-10 border-2 border-red-500/30 shadow-2xl relative z-10 text-center animate-float">
         {/* Badge */}

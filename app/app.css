@@ -129,6 +129,76 @@ body {
   border-radius: 3px;
 }
 
+/* Marquee ticker */
+@keyframes fdMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: fdMarquee 26s linear infinite;
+}
+
+/* Blinking type-cursor */
+@keyframes fdBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.blink-cursor {
+  animation: fdBlink 1s steps(1) infinite;
+}
+
+/* Rage-click shake */
+@keyframes fdShake {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-9px, 4px); }
+  40% { transform: translate(8px, -6px); }
+  60% { transform: translate(-6px, -3px); }
+  80% { transform: translate(5px, 5px); }
+}
+
+.shake-anim {
+  animation: fdShake 0.45s ease;
+}
+
+/* Pulsing accent glow */
+@keyframes fdGlow {
+  0%, 100% { box-shadow: 0 0 60px -10px rgba(230, 36, 41, 0.55); }
+  50% { box-shadow: 0 0 110px 0px rgba(230, 36, 41, 0.85); }
+}
+
+.glow-pulse {
+  animation: fdGlow 5s ease-in-out infinite;
+}
+
+/* Credits roll */
+@keyframes fdCredits {
+  from { transform: translateY(100%); }
+  to { transform: translateY(-115%); }
+}
+
+.credits-scroll {
+  animation: fdCredits 26s linear forwards;
+}
+
+/* Scroll-down hint bob */
+@keyframes fdFloatHint {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.scroll-hint-float {
+  animation: fdFloatHint 2.6s ease-in-out infinite;
+}
+
+/* Timeline row reveal on scroll into view */
+.timeline-row {
+  animation: fdReveal 0.7s ease both;
+  animation-timeline: view();
+  animation-range: entry 2% cover 22%;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
