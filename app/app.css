@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Anton', sans-serif;
+    --font-label: 'Bebas Neue', sans-serif;
+    --font-body: 'Manrope', sans-serif;
+    --font-quote: 'Playfair Display', serif;
+    --fd-accent: #e62429;
+    --fd-gold: #d8b25f;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #07080b;
+  color: #f2f3f5;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--fd-accent);
+  color: #fff;
+}
+
+/* Custom Font Utilities */
+.font-comic {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
+
+.font-outfit {
+  font-family: var(--font-body);
+}
+
+.font-handwriting {
+  font-family: var(--font-quote);
+  font-style: italic;
+}
+
+.font-label {
+  font-family: var(--font-label);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+/* Spider-Man Web Radial Background */
+.spidey-web-bg {
+  background-color: #07080b;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% 42%, rgba(230, 36, 41, 0.18) 0%, transparent 70%),
+    repeating-radial-gradient(circle at 50% 50%, transparent 0, transparent 40px, rgba(255, 255, 255, 0.04) 40px, rgba(255, 255, 255, 0.04) 42px),
+    conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(255, 255, 255, 0.06) 1deg, transparent 2deg, transparent 45deg, rgba(255, 255, 255, 0.06) 46deg, transparent 47deg);
+}
+
+/* Glow Effects */
+.spidey-glow {
+  box-shadow: 0 0 60px -10px rgba(230, 36, 41, 0.55), inset 0 0 15px rgba(230, 36, 41, 0.25);
+}
+
+.spidey-text-glow {
+  text-shadow: 0 0 15px rgba(230, 36, 41, 0.8), 0 0 30px rgba(230, 36, 41, 0.4);
+}
+
+.gold-text-glow {
+  text-shadow: 0 0 20px rgba(216, 178, 95, 0.5);
+}
+
+/* Reveal-on-load animation */
+@keyframes fdReveal {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: none; }
+}
+
+.animate-reveal {
+  animation: fdReveal 0.7s ease both;
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Pulse Glow */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.75; transform: scale(1.06); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+/* Glass / dark card */
+.glass-card {
+  background: rgba(14, 16, 23, 0.86);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Comic Border Effect */
+.comic-border {
+  border: 4px solid #000;
+  box-shadow: 6px 6px 0px #000;
+}
+
+.comic-border-red {
+  border: 1px solid rgba(230, 36, 41, 0.5);
+  box-shadow: 0 40px 90px -40px rgba(0, 0, 0, 0.9), 0 0 40px rgba(230, 36, 41, 0.25);
+}
+
+/* Gold double-border used by certificate-style elements */
+.gold-frame {
+  border: 1px solid rgba(216, 178, 95, 0.45);
+  border-radius: 6px;
+  background: linear-gradient(160deg, #12141b, #0a0c11);
+}
+
+.gold-frame-inner {
+  border: 1px solid rgba(216, 178, 95, 0.28);
+  border-radius: 3px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #07080b;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--fd-accent);
+  border-radius: 4px;
+}
